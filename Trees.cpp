@@ -16,6 +16,41 @@ struct Node *CreateNode(int value) {
     return newNode;
 }
 
+bool isBalanced(){
+
+
+
+    
+}
+
+void preOrderTraversal(struct Node *root) {
+    if (root == NULL) {
+        return; 
+    }
+
+   
+    cout << root->data << " ";
+
+   
+    preOrderTraversal(root->left);
+
+  
+    preOrderTraversal(root->right);
+}
+ void postOrderTraversal(struct Node *root){
+      if(root==NULL){
+        cout<<root->data<<"";
+        return ;
+      }
+       postOrderTraversal(root->left);
+       postOrderTraversal(root->right);
+
+
+ }
+
+
+
+
 int main() {
     struct Node *root = CreateNode(3);
 
@@ -26,7 +61,7 @@ int main() {
     root->right->left = CreateNode(6);
     root->right->right = CreateNode(7);
 
-    // Print values of nodes
+    
     cout << "Root Node: " << root->data << endl;
     cout << "Left Child of Root: " << root->left->data << endl;
     cout << "Right Child of Root: " << root->right->data << endl;
@@ -34,6 +69,9 @@ int main() {
     cout << "Right Child of Left Subtree: " << root->left->right->data << endl;
     cout << "Left Child of Right Subtree: " << root->right->left->data << endl;
     cout << "Right Child of Right Subtree: " << root->right->right->data << endl;
+
+    cout<<"pre order traversal"<<endl;
+    preOrderTraversal(root);
 
     return 0;
 }
